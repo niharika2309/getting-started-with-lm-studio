@@ -67,9 +67,6 @@ Once LM Studio is open, you can search for thousands of open-source models avail
 When you click on a model, you will notice different versions available for download, often starting with the letter **Q** (like `Q4`, `Q5`, or `Q8`). 
 
 These letters refer to **Quantization**. Think of quantization as compressing a large video file so it takes up less space. A quantized model shrinks the AI's file size so it fits inside a normal computer's memory, while keeping almost all of its original intelligence.
-*   **Q4:** High compression. Runs very fast and uses minimal memory, but might occasionally be slightly less precise. (Great for older or weaker computers!)
-*   **Q5:** The "sweet spot" for most users. Balanced speed and intelligence.
-*   **Q8:** Low compression. Highly accurate but requires a powerful computer with plenty of RAM.
 
 Choose a `Q4` or `Q5` version of your selected model and click **Download**.
 
@@ -138,7 +135,7 @@ from openai import OpenAI
 client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
 
 completion = client.chat.completions.create(
-    model="local-model", # LM Studio automatically defaults to your loaded model
+    model="YOUR_MODEL_NAME", # LM Studio automatically defaults to your loaded model
     messages=[
         {"role": "system", "content": "You are a helpful, brief AI assistant."},
         {"role": "user", "content": "Explain what a local LLM is in one short sentence."}
